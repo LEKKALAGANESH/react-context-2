@@ -1,0 +1,53 @@
+/* Write your CSS here */
+
+.body-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50vh;
+    margin: 10px 0px 10px 0px;
+}
+
+.heading {
+    font-size: 1rem;
+}
+
+.body-card {
+    padding: 16px 10px 16px 10px;
+    color: #64748b;
+}
+
+.left-navbar {
+    background-color: #f1f5f9;
+    width: 25%;
+    padding: 20px;
+}
+
+ul {
+    font-size: 1rem;
+    list-style-type: none;
+}
+
+.content-card {
+    font-size: 1rem;
+    width: 60%;
+    padding: 20px;
+}
+
+.right-navbar {
+    background-color: #f1f5f9;
+    width: 25%;
+    padding: 20px;
+}
+
+.right-navbar-description {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 5rem;
+    border: 1.5px solid #64748b;
+    padding: 1.5rem;
+}

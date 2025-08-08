@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import ConfigurationContext from './context/ConfigurationContext'
+
+import ConfigurationController from './components/ConfigurationController'
+
+import Layout from './components/Layout'
+
+import './App.css'
+
+class App extends Component {
+  state = { showContent: true, showLeftNavbar: true, showRightNavbar: true }
+
+  onToggleShowContent = showContent => {
+    this.setState({ showContent })
+  }
+
+  onToggleShowLeftNavbar = showLeftNavbar => {
+    this.setState({ showLeftNavbar })
+  }
+
+  onToggleShowRightNavbar = showRightNavbar => {
+    this.setState({ showRightNavbar })
+  }
+
+  render() {
+    const { showContent, showLeftNavbar, showRightNavbar } = this.state
+    return (
+      <ConfigurationContext.Provider
+        value={{
+          showContent,
+          showLeftNavbar,
+          showRightNavbar,
+          onToggleShowContent: this.onToggleShowContent,
+          onToggleShowLeftNavbar: this.onToggleShowLeftNavbar,
+          onToggleShowRightNavbar: this.onToggleShowRightNavbar,
+        }}
+      >
+        <div>
+          <ConfigurationController />
+          <Layout />
+        </div>
+      </ConfigurationContext.Provider>
+    )
+  }
 }
 
-export default App;
+export default App

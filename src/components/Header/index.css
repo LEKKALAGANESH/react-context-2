@@ -1,0 +1,12 @@
+/* Write your CSS here */
+
+.header-containter {
+    font-size: 1rem;
+    background-color: #cbd5e1;
+    text-align: center;
+    padding: 20px;
+}
+
+.header-main-heading {
+    color: #475569;
+}
